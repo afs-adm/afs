@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/main.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://api-maps.yandex.ru/1.1/index.xml?key=ACdbLk4BAAAAqPKgUAIA1ascDDOeI94hAFcTAjipXP-2NT8AAAAAAAAAAAB3s12PvfQZwiMApH65DtsWgQ_DFw==~ABRriU4BAAAA-     RNESAQAaBrjBOkUGZbP0gEDDi8XAijoY8UAAAAAAAAAAACGZSYCQXpwlPvCmzmDLpSCTsPnMg==" type="text/javascript"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/">afffrica</a>
+        <span>Салон отдыха мужчин №1</span>
+      </div>
+      <div class="phone">(343) 312-69-69</div>
+      <div class="menu">
+        <div>
+          <a href="index.html">О райском месте</a>
+          <a href="#">Наши львицы</a>
+          <a href="#">Выбери удовольствие</a>
+          <a href="#">Наши пейзажи</a>
+          <a href="comments">О нас говорят</a>
+          <a href="#">Закон джунглей</a>
+          <span>Найти нас</span>
+          <a href="vacancy">Пополни прайд</a>
+        </div>
+      </div>
+    </header>
+
+    <div id="map"></div>
+
+    <script type="text/javascript">
+      // Создает обработчик события window.onLoad
+      $(function () {
+        // Создает экземпляр карты и привязывает его к созданному контейнеру
+        var map = new YMaps.Map($('#map'));
+        map.addControl(new YMaps.Zoom());
+        map.addControl(new YMaps.TypeControl());
+        map.addControl(new YMaps.ScaleLine());
+        map.addControl(new YMaps.ToolBar());
+        map.addControl(new YMaps.SearchControl());
+  
+        var geocoder = new YMaps.Geocoder("Екатеринбург");
+  
+        YMaps.Events.observe(geocoder, geocoder.Events.Load, function () {
+          if (this.length()) {
+            p = this.get(0).getGeoPoint();
+            map.setCenter(p, 10, YMaps.MapType.MAP);
+            map.setBounds(geocoder.get(0).getBounds());
+            map.enableScrollZoom();
+  
+          }else {
+            alert("Ничего не найдено");
+          }
+        });
+      });
+      $(function() {
+        var original_geopoint = new YMaps.GeoPoint(60.5973, 56.838);
+        var original_zoom = 11;
+        map.setCenter(original_geopoint, original_zoom);
+
+        map.removeAllOverlays()
+
+
+        geocoder0 = new YMaps.Geocoder("г.Екатеринбург, ул.Радищева 31", {results: 1});
+        YMaps.Events.observe(geocoder0, geocoder0.Events.Load, function (geocoder) {
+            if (this.length()) {
+                geoResult = this.get(0);
+
+                var s = new YMaps.Style();
+                s.iconStyle = new YMaps.IconStyle();
+
+                s.iconStyle.href = '/assets/images/marker.png';
+                s.iconStyle.size = new YMaps.Point(37, 31);
+                s.iconStyle.offset = new YMaps.Point(-9, -29);
+
+                var placemark = new YMaps.Placemark(geoResult.getGeoPoint(), {style:s});
+                placemark.name = "г.Екатеринбург, ул.Радищева 31"
+                placemark.description = "";
+                map.addOverlay(placemark);
+            }
+        });
+      });
+    </script>
+
+    <div class="">
+    </div>
+
+    <footer>
+    </footer>
+  </body>
+</html>

@@ -35,6 +35,7 @@ group :test do
   gem 'autotest', '4.4.6'
   gem 'autotest-rails-pure', '4.1.2'
   gem 'autotest-notification', '2.3.4'
+  gem 'spork', '0.9.2'
 end
 
 # To use ActiveModel has_secure_password
