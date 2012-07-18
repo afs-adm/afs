@@ -1,0 +1,52 @@
+body {
+  background-color:black;
+}
+div.menu {
+  width:inherit;
+  position:absolute;
+  top:10em;
+  left:12em;
+  font-size: 0.85em;
+  height:3.2em;
+  color: #000;
+  text-align:center;
+  background-color: #C04616;
+}
+div.menu div {
+  width:74em;
+  margin: auto;
+}
+div.menu span {
+  float:left;
+  color: #999;
+  background-color: #C04616;
+  padding: 10px 18px;
+}
+div.menu a {
+  display:block;
+  float:left;
+  color: #e8e8e8;
+  background-color: #C04616;
+  text-align:center;
+  padding: 10px 18px;
+  text-decoration: none;
+}
+div.menu a:hover {
+  color: #ccc;
+  background-color: #782A0B;
+}
+
+div.logo {
+  position:absolute;
+  left:15em;
+  top:5em;
+  color: #FFFFFF;
+}
+
+div.phone {
+  position:absolute;
+  left:45em;
+  top:4em;
+  font-size:1.2em;
+  color: #FFFFFF;
+}
