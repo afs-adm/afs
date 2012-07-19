@@ -20,6 +20,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'unicorn'
 
 gem 'therubyracer', :require => 'v8'
 
