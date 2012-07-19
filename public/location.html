@@ -2,90 +2,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <link href="/assets/main.css" media="screen" rel="stylesheet" type="text/css" />
-    <script src="http://api-maps.yandex.ru/1.1/index.xml?key=ACdbLk4BAAAAqPKgUAIA1ascDDOeI94hAFcTAjipXP-2NT8AAAAAAAAAAAB3s12PvfQZwiMApH65DtsWgQ_DFw==~ABRriU4BAAAA-     RNESAQAaBrjBOkUGZbP0gEDDi8XAijoY8UAAAAAAAAAAACGZSYCQXpwlPvCmzmDLpSCTsPnMg==" type="text/javascript"></script>
+
+    <script src="/assets/application.js" type="text/javascript"></script>
+    <script src="/assets/jquery-1.7.2.js" type="text/javascript"></script>
+
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="/">afffrica</a>
-        <span>Салон отдыха мужчин №1</span>
-      </div>
-      <div class="phone">(343) 312-69-69</div>
-      <div class="menu">
-        <div>
-          <a href="index.html">О райском месте</a>
-          <a href="#">Наши львицы</a>
-          <a href="#">Выбери удовольствие</a>
-          <a href="#">Наши пейзажи</a>
-          <a href="comments">О нас говорят</a>
-          <a href="#">Закон джунглей</a>
-          <span>Найти нас</span>
-          <a href="vacancy">Пополни прайд</a>
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <a href="/">afffrica</a><br />
+          <span>Салон отдыха мужчин №1</span>
+        </div>
+        <div class="phone">(343) 312-69-69</div>
+        <div class="menu">
+          <div>
+            <a href="index.html">О райском месте</a>
+            <a href="employees.html">Наши львицы</a>
+            <a href="services.html">Выбери удовольствие</a>
+            <a href="views.html">Наши пейзажи</a>
+            <a href="comments">О нас говорят</a>
+            <a href="laws.html">Закон джунглей</a>
+            <span>Найти нас</span>
+            <a href="vacancy">Пополни прайд</a>
+          </div>
+        </div>
+      </header>
+ 
+      <div class="main_content">
+        <h2 class="orange">Как нас найти</h2>
+        <div id="map"></div>
+        <script type="text/javascript">
+          ymaps.ready(init);
+          function init () {
+            var map = new ymaps.Map('map', {
+              center: [56.828724, 60.591668],
+              zoom: 16,
+              behaviors: ['default', 'scrollZoom']
+            });
+            placemark = new ymaps.Placemark([56.828724, 60.591668])
+            map.geoObjects.add(placemark);
+            map.controls
+                .add('zoomControl')
+          }
+        </script>
+
+        <div class="text">
+          <h3><strong>ул.Радищева 31, тел. 213-69-69</strong></h3>
+          <span>Повернув с Радищева на улицу Сакко и Ванцетти, тут же поворачивайте налево.<br /> Поворачивайте перед ТрансБанком. Пройдя еще двадцать метров вы увидите<br /> вывеску Afffrica.<br /><br /></span>
+          <span>Хорошего настроения и приятного вам отдыха.<br /><br /></span>
+          <span>телефон: (343) 456-00-01<br /></span>
+          <span>e-mail: info@afffrica.ru<br /></span>
         </div>
       </div>
-    </header>
-
-    <div id="map"></div>
-
-    <script type="text/javascript">
-      // Создает обработчик события window.onLoad
-      $(function () {
-        // Создает экземпляр карты и привязывает его к созданному контейнеру
-        var map = new YMaps.Map($('#map'));
-        map.addControl(new YMaps.Zoom());
-        map.addControl(new YMaps.TypeControl());
-        map.addControl(new YMaps.ScaleLine());
-        map.addControl(new YMaps.ToolBar());
-        map.addControl(new YMaps.SearchControl());
-  
-        var geocoder = new YMaps.Geocoder("Екатеринбург");
-  
-        YMaps.Events.observe(geocoder, geocoder.Events.Load, function () {
-          if (this.length()) {
-            p = this.get(0).getGeoPoint();
-            map.setCenter(p, 10, YMaps.MapType.MAP);
-            map.setBounds(geocoder.get(0).getBounds());
-            map.enableScrollZoom();
-  
-          }else {
-            alert("Ничего не найдено");
-          }
-        });
-      });
-      $(function() {
-        var original_geopoint = new YMaps.GeoPoint(60.5973, 56.838);
-        var original_zoom = 11;
-        map.setCenter(original_geopoint, original_zoom);
-
-        map.removeAllOverlays()
-
-
-        geocoder0 = new YMaps.Geocoder("г.Екатеринбург, ул.Радищева 31", {results: 1});
-        YMaps.Events.observe(geocoder0, geocoder0.Events.Load, function (geocoder) {
-            if (this.length()) {
-                geoResult = this.get(0);
-
-                var s = new YMaps.Style();
-                s.iconStyle = new YMaps.IconStyle();
-
-                s.iconStyle.href = '/assets/images/marker.png';
-                s.iconStyle.size = new YMaps.Point(37, 31);
-                s.iconStyle.offset = new YMaps.Point(-9, -29);
-
-                var placemark = new YMaps.Placemark(geoResult.getGeoPoint(), {style:s});
-                placemark.name = "г.Екатеринбург, ул.Радищева 31"
-                placemark.description = "";
-                map.addOverlay(placemark);
-            }
-        });
-      });
-    </script>
-
-    <div class="">
+ 
+      <footer>
+      </footer>
     </div>
-
-    <footer>
-    </footer>
   </body>
 </html>

@@ -1,11 +1,19 @@
 body {
   background-color:black;
 }
-div.menu {
-  width:inherit;
-  position:absolute;
+div.wrapper {
+  min-width:990px;
+  max-width:1180px;
+  margin: 0 auto;
+  position:relative;
+  width:95%;
+}
+
+header {
+  position:relative;
   top:10em;
-  left:12em;
+}
+div.menu {
   font-size: 0.85em;
   height:3.2em;
   color: #000;
@@ -37,16 +45,40 @@ div.menu a:hover {
 }
 
 div.logo {
-  position:absolute;
-  left:15em;
-  top:5em;
+  position:relative;
+  top:-5em;
+  left:18em;
   color: #FFFFFF;
 }
 
 div.phone {
-  position:absolute;
-  left:45em;
-  top:4em;
-  font-size:1.2em;
+  position:relative;
+  top:-4.5em;
+  left:25em;
+  font-size:1.5em;
   color: #FFFFFF;
+}
+
+div.main_content {
+  position:relative;
+  top:12em;
+}
+
+div#map {
+  width:400px;
+  height:300px;
+  float:left;
+  border-size:4px;
+}
+div.text {
+  margin-left: 450px;
+}
+
+h2.orange {
+  color:#E85018;
+  border-color:#E85018;
+}
+
+span,h1,h2,h3,h4 {
+  color:#EEEEEE;
 }
