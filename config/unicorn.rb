@@ -9,7 +9,7 @@ worker_processes (rails_env == 'production' ? 4 : 2)
 # preload application
 preload_app true
 
-listen 3000
+listen '/tmp/sockets/unicorn.sock'
  
 # Restart any workers that haven't responded in 30 seconds
 timeout 30
