@@ -9,11 +9,7 @@ worker_processes (rails_env == 'production' ? 4 : 2)
 # preload application
 preload_app true
 
-if rails_env == 'production'
-  listen 80
-else
-  listen 3000
-end
+listen 3000
  
 # Restart any workers that haven't responded in 30 seconds
 timeout 30
@@ -22,7 +18,7 @@ timeout 30
 pid app_root + '/tmp/pids/unicorn.pid'
 
 before_fork do |server, worker|
-  old_pid = RAILS_ROOT + '/tmp/pids/unicorn.pid.oldbin'
+  old_pid = app_root + '/tmp/pids/unicorn.pid.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
