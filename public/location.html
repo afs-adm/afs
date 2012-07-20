@@ -1,7 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if lt IE 9]> 
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+    <![endif]-->
+    <meta charset="utf-8" />
 
     <link href="/stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
 
@@ -15,19 +18,21 @@
           <span>Салон отдыха мужчин №1</span>
         </span>
         <span class="phone">(343) 312-69-69</span>
-        <div class="menu">
-          <div>
-            <a href="index.html">О райском месте</a>
+      </header>
+      <nav>
+        <div class="navicontainer">
+          <div class="menu_wrapper">
+            <a href="index.html" class="first">О райском месте</a>
             <a href="employees.html">Наши львицы</a>
             <a href="services.html">Выбери удовольствие</a>
             <a href="views.html">Наши пейзажи</a>
             <a href="comments">О нас говорят</a>
             <a href="laws.html">Закон джунглей</a>
-            <span>Найти нас</span>
-            <a href="vacancy">Пополни прайд</a>
+            <a href="location.html" class="active">Найти нас</a>
+            <a href="vacancy" class="last">Пополни прайд</a>
           </div>
         </div>
-      </header>
+      </nav>
  
       <div class="main_content">
         <h2 class="orange">Как нас найти</h2>
@@ -40,7 +45,7 @@
               zoom: 16,
               behaviors: ['default', 'scrollZoom']
             });
-            placemark = new ymaps.Placemark([56.828724, 60.591668])
+            placemark = new ymaps.Placemark([56.82934, 60.592])
             map.geoObjects.add(placemark);
             map.controls
                 .add('zoomControl')
