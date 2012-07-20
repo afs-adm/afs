@@ -1,2 +1,27 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
+<nav>
+  <div class="navicontainer">
+    <div class="menu_wrapper">
+      <a href="index.html" class="first">О райском месте</a>
+      <a href="employees.html">Наши львицы</a>
+      <a href="services.html">Выбери удовольствие</a>
+      <a href="views.html">Наши пейзажи</a>
+      <a href="comments" class="active">О нас говорят</a>
+      <a href="laws.html">Закон джунглей</a>
+      <a href="location.html">Найти нас</a>
+      <a href="challengers" class="last">Пополни прайд</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main_content">
+  <div class="comments">
+    <h2>Ваши комментарии</h2>
+    <% @comments.each do |comment| %>
+      <p><strong><%= comment.name %></strong>:<br />
+      <%= comment.text %></p><br />
+    <% end %>
+  </div>
+  <div class="comments_form">
+    <%= render :partial => 'create' %>
+  </div>
+</div>

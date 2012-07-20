@@ -1,7 +1,8 @@
 body {
-  background-color:black;
-  font-family:arial, sans-serif;
-  font-size:15px;
+  background-color: black;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+  color: #EEEEEE;
 }
 div.wrapper {
   min-width:980px;
@@ -81,7 +82,6 @@ nav a.last{
   top:-4.5em;
   left:25em;
   font-size:1.5em;
-  color: #FFFFFF;
   width:auto;
 }
 
@@ -105,6 +105,14 @@ h2.orange {
   border-color:#E85018;
 }
 
-span,h1,h2,h3,h4 {
-  color:#EEEEEE;
+.comments {
+  width:600px;
+  float:left;
+  border-size:4px;
 }
+.comments_form {
+  margin-left: 750px;
+}
+
+.comments_form input, textarea {
+  width:100%;

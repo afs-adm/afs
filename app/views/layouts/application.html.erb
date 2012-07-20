@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Afffrica</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= yield %>
+  <head>
+    <title>Afffrica</title>
+    <!--[if lt IE 9]> 
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+    <![endif]-->
+    <meta charset="utf-8" />
 
-  <%= render :partial => 'common/footer' %>
-</body>
+    <link href="/stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= render :partial => 'common/header' %>
+
+      <%= yield %>
+
+      <%= render :partial => 'common/footer' %>
+    </div>
+  </body>
 </html>

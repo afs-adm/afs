@@ -1,3 +1,4 @@
 class Challenger < ActiveRecord::Base
-  attr_accessible :name, :photo_id, :text
+  attr_accessible :name, :text
+  has_many :photos
 end
