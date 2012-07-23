@@ -100,19 +100,52 @@ div.text {
   margin-left: 450px;
 }
 
-h2.orange {
+.orange {
   color:#E85018;
   border-color:#E85018;
 }
 
-.comments {
+.comments_content {
   width:600px;
   float:left;
   border-size:4px;
 }
 .comments_form {
+  margin-top:  200px;
   margin-left: 750px;
 }
 
-.comments_form input, textarea {
+.comments_form input#comment_name, textarea#comment_text {
+  background-color:#C68E14;
+  color:#000000;
   width:100%;
+}
+
+.comments_form input#submit {
+  background-color:#E85018;
+  color:#EEEEEE;
+  width:100%;
+}
+
+.challengers_content {
+  width:600px;
+  float:left;
+  border-size:4px;
+}
+
+.challengers_form {
+  margin-top:  200px;
+  margin-left: 750px;
+}
+
+.challengers_form input#challenger_name, textarea#challenger_text {
+  background-color:#C68E14;
+  color:#000000;
+  width:100%;
+}
+
+.challengers_form input#submit {
+  background-color:#E85018;
+  color:#EEEEEE;
+  width:100%;
+}

@@ -1,13 +1,13 @@
 <%= form_for :comment do |f| %>
   <p>
-    <%= f.label :name, "Ваше имя" %><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :text, "Комментарий" %><br />
+    <%= f.label :text, "Напишите свой отзыв" %><br />
     <%= f.text_area :text %>
   </p>
 
-  <%= f.submit "Оставить комментарий" %>
+  <p>
+    <%= f.label :name, "Представтесь" %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <%= f.submit "Отправить", :id => "submit" %>
 <% end %>

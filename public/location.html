@@ -41,14 +41,27 @@
           ymaps.ready(init);
           function init () {
             var map = new ymaps.Map('map', {
-              center: [56.828724, 60.591668],
+              center: [56.829, 60.592],
               zoom: 16,
               behaviors: ['default', 'scrollZoom']
             });
-            placemark = new ymaps.Placemark([56.82934, 60.592])
-            map.geoObjects.add(placemark);
-            map.controls
-                .add('zoomControl')
+            map.controls.add('zoomControl')
+
+            placemark = new ymaps.Placemark([56.82934, 60.592]);
+            polyline = new ymaps.Polyline([
+              [56.82979, 60.59073],
+              [56.82935, 60.590889],
+              [56.82947, 60.592],
+              [56.82934, 60.59204]
+            ], {
+            }, {
+              strokeWidth: 5,
+              strokeOpacity: 0.5,
+              strokeColor: "#FF0000"
+            });
+
+           map.geoObjects
+             .add(polyline)
           }
         </script>
 
