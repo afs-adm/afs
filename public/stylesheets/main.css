@@ -1,12 +1,12 @@
 body {
   background-color: black;
   font-family: arial, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   color: #EEEEEE;
 }
 div.wrapper {
   min-width:980px;
-  max-width:1180px;
+  max-width:1100px;
   margin:0 auto;
   position:relative;
 }
@@ -17,30 +17,23 @@ header {
   top:10em;
 }
 nav {
-  min-width: 980px;
-  min-width: 1180px;
+  max-width: 1100px;
   position: relative;
   top:150px;
-  overflow: hidden;
   text-align: center;
   margin: 5px auto;
 }
 
-.navicontainer {
-  float: left;
-  left: 50%;
-  position: relative;
-  text-align: center;
+.menu {
+  background-color:#C04616;
+  width: 1100px;
+  border-collapse:collapse;
 }
 
-.menu_wrapper {
-  position: relative;
-  left: -50%;
-  float: left;
-  list-style: none;
-  margin: 0; padding: 0;
+.menu th {
+  padding: 0px;
+  background-color: #C04616;
 }
-
 nav a {
   float: left;
   padding: 15px;
@@ -51,22 +44,15 @@ nav a {
   background-color: #C04616;
 }
 
-nav a:hover {
+nav a:hover,th:hover {
   color: #CCC;
   background-color: #782A0B;
 }
 
-nav a.active {
+nav a.active, th.active {
   color: #999;
   cursor: default;
   background-color: #542710;
-}
-nav a.first {
-  padding-left:29px;
-}
-
-nav a.last{
-  padding-right:30px;
 }
 
 .logo {
@@ -105,8 +91,8 @@ div.text {
   border-color:#E85018;
 }
 
-.comments_content {
-  width:600px;
+.content {
+  width:650px;
   float:left;
   border-size:4px;
 }
@@ -127,14 +113,8 @@ div.text {
   width:100%;
 }
 
-.challengers_content {
-  width:600px;
-  float:left;
-  border-size:4px;
-}
-
 .challengers_form {
-  margin-top:  200px;
+  margin-top:  150px;
   margin-left: 750px;
 }
 
@@ -142,6 +122,10 @@ div.text {
   background-color:#C68E14;
   color:#000000;
   width:100%;
+}
+
+.challengers_form textarea#challenger_text {
+  height:200px;
 }
 
 .challengers_form input#submit {

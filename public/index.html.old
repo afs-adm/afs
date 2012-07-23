@@ -22,12 +22,12 @@
       <nav>
         <div class="navicontainer">
           <div class="menu_wrapper">
-            <a href="index.html" class="first">О райском месте</a>
+            <a href="index.html" class="active first">О райском месте</a>
             <a href="employees.html">Наши львицы</a>
             <a href="services.html">Выбери удовольствие</a>
             <a href="views.html">Наши пейзажи</a>
             <a href="comments">О нас говорят</a>
-            <a href="laws.html" class="active">Закон джунглей</a>
+            <a href="rules.html">Закон джунглей</a>
             <a href="location.html">Найти нас</a>
             <a href="challengers" class="last">Пополни прайд</a>
           </div>

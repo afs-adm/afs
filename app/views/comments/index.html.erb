@@ -6,7 +6,7 @@
       <a href="services.html">Выбери удовольствие</a>
       <a href="views.html">Наши пейзажи</a>
       <a href="comments" class="active">О нас говорят</a>
-      <a href="laws.html">Закон джунглей</a>
+      <a href="rules.html">Закон джунглей</a>
       <a href="location.html">Найти нас</a>
       <a href="challengers" class="last">Пополни прайд</a>
     </div>
@@ -17,7 +17,7 @@
   <div class="comments_content">
     <h2>Ваши комментарии</h2>
     <% @comments.each do |comment| %>
-      <p><strong><%= comment.name %></strong>:<br />
+      <p><span class="orange"><strong><%= comment.name %></strong></span><br />
       <%= comment.text %></p><br />
     <% end %>
   </div>
