@@ -1,12 +1,11 @@
 body {
   background-color: black;
   font-family: arial, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   color: #EEEEEE;
 }
 div.wrapper {
-  min-width:980px;
-  max-width:1100px;
+  width:85%;
   margin:0 auto;
   position:relative;
 }
@@ -14,59 +13,62 @@ div.wrapper {
 header {
   display:block;
   position:relative;
-  top:10em;
+  top:100px;
 }
+
 nav {
-  max-width: 1100px;
-  position: relative;
-  top:150px;
-  text-align: center;
-  margin: 5px auto;
+  width: 100%;
 }
 
-.menu {
-  background-color:#C04616;
-  width: 1100px;
-  border-collapse:collapse;
-}
-
-.menu th {
-  padding: 0px;
-  background-color: #C04616;
-}
-nav a {
-  float: left;
-  padding: 15px;
-  margin: 0;
-  color: #EEEEEE;
+ol {
   font-weight: bold;
-  text-decoration: none;
+  padding:0;
+  margin:0;
+  display:table;
+}
+
+nav li {
+  list-style: none;
+  height: 45px;
+  position: relative;
+  width: auto;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+nav li a {
+  color: #EEEEEE;
   background-color: #C04616;
+  text-decoration: none;
+  text-align:center;
+  height: 45px;
+  display: table-cell;
+  vertical-align: middle;
+  font-size:12px;
+  width: 1000px;
 }
 
-nav a:hover,th:hover {
-  color: #CCC;
-  background-color: #782A0B;
+nav a.active, a.active:hover {
+  cursor:default;
+  background-color:#542710;
 }
 
-nav a.active, th.active {
-  color: #999;
-  cursor: default;
-  background-color: #542710;
+nav a:hover {
+  background-color:#782A0B;
 }
 
 .logo {
   position:relative;
-  top:-5em;
-  left:18em;
+  top:-63px;
+  left:230px;
   color:#FFFFFF;
   width:auto;
 }
 
 .phone {
   position:relative;
-  top:-4.5em;
-  left:25em;
+  top:-65px;
+  left:500px;
   font-size:1.5em;
   width:auto;
 }
