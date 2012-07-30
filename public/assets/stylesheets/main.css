@@ -1,0 +1,471 @@
+*{
+ margin:0;
+ padding:0;
+}
+
+.clr{
+ clear:both;
+}
+
+img{
+ border:0;
+}
+
+a{
+}
+
+a:hover{
+}
+
+.bold{
+ font-weight:bold;
+}
+
+html, body{
+ height:100%;
+}
+
+body{
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:14px;
+ color:#fff;
+ line-height:1.5;
+ background:#000;
+}
+
+.body{
+ width:100%;
+ min-height:90%;
+ background: url(../images/site/footer.jpg) bottom repeat-x;
+ padding-bottom:100px;
+}
+
+.container{
+	width:977px;
+	background:url(../images/site/head.jpg) top left no-repeat;
+	margin:0px auto;
+}
+
+.container .contain{
+	width:977px;
+  margin:0 auto;
+	position:relative;
+	padding-top:160px;
+}
+
+.logo{
+	position:absolute;
+	left:240px;
+	top:20px;
+}
+
+.tel{
+ position:absolute;
+ left:500px;
+ top:30px;
+ font-size:24px;
+}
+
+.code{
+ position:relative;
+ font-size:18px;
+}
+
+.nav {
+  width: 100%;
+  position:relative;
+  top:-27px;
+  display:block;
+  height:41px;
+  background:url(../images/site/menu.jpg) center no-repeat;
+}
+
+.nav ol {
+  padding:0;
+  margin:0;
+  display:table-row;
+}
+
+.nav ol li {
+  list-style: none;
+  height: 41px;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  margin:0 auto;
+}
+
+.nav #nav1 {
+  width: 13%;
+}
+.nav #nav2 {
+  width: 13%;
+}
+.nav #nav3 {
+  width: 16%;
+}
+.nav #nav4 {
+  width: 11%;
+}
+.nav #nav5 {
+  width: 11%;
+}
+.nav #nav6 {
+  width: 13%;
+}
+.nav #nav7 {
+  width: 10%;
+}
+.nav #nav8 {
+  width: 13%;
+}
+
+.nav ol li a {
+ text-decoration:none;
+ color:#fff;
+ font-size:13px;
+ text-shadow:0px 1px 1px #000;
+ padding-left:10px;
+ padding-right:10px;
+ text-align:center;
+ height: 41px;
+ width:1000px;
+ display: table-cell;
+ vertical-align: middle;
+}
+
+.nav ol li a.active{
+ background:url(../images/site/active.png) bottom repeat-x;
+}
+
+.nav ol li a:hover{
+ background:url(../images/site/hover.png) bottom repeat-x;
+}
+
+.leftcol{
+ width:570px;
+ float:left;
+}
+
+h1{
+ font-size:28px;
+ color:#ff4400;
+ font-weight:normal;
+ margin-bottom:5px;
+}
+
+.orange {
+  color:#ff4400;
+}
+.text{
+line-height:1.75;
+}
+.text p:first-letter{
+ margin-left:25px;
+}
+
+.main_girl{
+ float:right;
+ width:370px;
+ position:relative;
+ top:90px;
+}
+
+.main_girl img {
+ float:left;
+}
+
+.main_girl div{
+ float:right;
+ width:170px;
+ color:#ff4400;
+ line-height:1.75;
+}
+
+
+.main_girl div .name, .gallery_d .name{
+ font-size:24px;
+ display:block;
+}
+
+.main_girl .desc, .gallery_d .desc{
+ font-size:12px;
+ display:block;
+}
+
+.main_girl .params, .gallery_d .params{
+ display:block;
+ font-size:16px;
+}
+
+.main_girl .params span, .gallery_d .params span{
+ color:#fff;
+ font-size:14px;
+ display:block;
+}
+
+.main_girl a, .gallery_d a{color:#ff4400; text-decoration:underline;}
+
+.main_girl a:hover, .gallery_d a:hover{
+ text-decoration:none;
+}
+
+.form{
+ float:right;
+ width:380px;
+ position:relative;
+ top:50px;
+}
+
+.form span{
+ display:block;
+ font-size:12px;
+ color:#fff;
+ margin-bottom:4px;
+}
+
+.form textarea{
+ width:370px;
+ height:200px;
+ padding:5px;
+ background:#cb8811;
+ border-radius:5px;
+ resize:none;
+ border:none;
+ margin-bottom:10px;
+}
+
+.form input{
+ display:block;
+ width:370px;
+ height:28px;
+ padding:2px 5px;
+ background:#cb8811;
+ border-radius:5px;
+ border:none;
+ margin-bottom:20px;
+}
+
+.form input[type="submit"] {
+ width:379px;
+ height:40px;
+ position:relative;
+ cursor:pointer;
+ border:none;
+ background:url(../images/site/send_btn.png);
+}
+
+.form input#submit span{
+ position:absolute;
+ color:#fff;
+ font-size:14px;
+ text-align:center;
+ left:0px;
+ right:0px;
+ top:9px;
+ cursor:pointer;
+}
+
+.map{
+ float:left;
+ width:398px;
+}
+
+.map_info{
+ width:550px;
+ float:right;
+}
+
+.gallery_c{
+ display:block;
+ margin-bottom:35px;
+}
+
+.gallery{
+ width:297px;
+ float:left;
+}
+
+.gallery_d{
+ float:left;
+ margin-left:40px;
+ color:#ff4400;
+ line-height:1.75;
+ position:relative;
+ top:30px;
+ display:block;
+}
+
+#gal_big{
+ width:297px;
+ text-align:center;
+ display:block;
+ margin-bottom:15px;
+}
+
+#gal_big img{
+ border:5px solid #da3c02;
+}
+
+.gallery a{
+ border:2px solid #da3c02;
+ float:left;
+}
+
+.gallery a.margin{
+ margin:0px 10px;
+}
+
+
+.more_girls{
+ display:block;
+ background:url(../images/db/c_sep.png) top center no-repeat;
+ width:100%;
+ position:relative;
+ padding-top:20px;
+}
+
+.more_girls div{
+ text-align:center;
+ display:block;
+ margin-top:15px;
+}
+
+.more_girls a{
+ margin:0px 4px;
+}
+
+.more_girls a img{
+ border:2px solid #da3c02;
+}
+
+.program_pic{
+ float:left;
+ width:180px;
+ margin-right:20px;
+}
+
+.program_pic img{
+ border:5px solid #da3c02;
+}
+
+.program_d{
+ float:left;
+ width:570px;
+}
+
+.block_cat{
+ display:block;
+ margin-top:20px;
+}
+
+.block_cat .links{
+ font-size:18px;
+ display:block;
+ padding-left:85px;
+}
+
+.block_cat .links div {
+ float:left;
+ display:block;
+}
+
+.block_cat .links div a{
+ background-position:center 5px;
+ background-repeat:no-repeat;
+ text-decoration:none;
+ display:block;
+ height:50px;
+ padding:0px 15px 15px 15px;
+ position:relative;
+}
+
+.cl a{background-image:url(../images/db/classic.png); color:#00c405;}
+.po a{background-image:url(../images/db/popular.png); color:#ff4400;}
+.ex a{background-image:url(../images/db/exclusive.png); color:#e90000;}
+.wo a{background-image:url(../images/db/for_women.png); color:#0054ff;}
+.pa a{background-image:url(../images/db/couple.png); color:#cc00ff;}
+.he a{background-image:url(../images/db/health.png); color:#00ccff;}
+
+.block_cat .links a{
+ text-decoration:none;
+}
+
+.block_cat .links a span{
+ position:relative;
+ top:30px;
+}
+
+.block_cat .block{
+ padding:10px;
+ display:block;
+ background:url(../images/site/bg1.png) top repeat-x;
+ border-top:1px solid #cb0000;
+}
+
+.block_cat .block img{
+ border:5px solid #da3c02;
+ margin:0px 6px;
+}
+
+.block_cat .active{
+ background:url(../images/site/bg2.png) bottom repeat-x;
+}
+
+.room_pic{
+ float:left;
+ border:5px solid #da3c02;
+}
+
+.room_t{
+ float:left;
+ margin-left:25px;
+ width:550px;
+}
+
+.more_rooms{
+ display:block;
+ margin-top:40px;
+}
+
+.more_rooms a {
+ margin-right:16px;
+}
+
+.more_rooms a img{
+ border:5px solid #da3c02;
+}
+
+.more_rooms h1{
+ margin-bottom:20px;
+}
+
+.room_t h1{
+ font-size:24px;
+ margin-top:15px;
+}
+
+.room_t p:first-letter{
+ margin-left:25px;
+}
+
+.text ul{
+ list-style:decimal;
+ margin-left:20px;
+}
+
+.text ul li{
+ margin-bottom:15px;
+}
+
+div#map {
+  width:400px;
+  height:300px;
+  float:left;
+  border: 4px solid #DA3C02;
+}
+
+.center {
+  position:relative;
+  left:100px;
+}

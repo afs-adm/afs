@@ -1,81 +1,93 @@
-<!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <!--[if lt IE 9]> 
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
-    <![endif]-->
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Документ без названия</title>
 
-    <link href="/stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css" />
 
+    <script type="text/javascript" src="assets/javascripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="assets/javascripts/main.js"></script>
     <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <span class="logo">
-          <a href="/">afffrica</a><br />
-          <span>Салон отдыха мужчин №1</span>
-        </span>
-        <span class="phone">(343) 213-69-69</span>
-      </header>
-      <nav>
-        <div class="navicontainer">
-          <div class="menu_wrapper">
-            <a href="index.html" class="first">О райском месте</a>
-            <a href="employees.html">Наши львицы</a>
-            <a href="services.html">Выбери удовольствие</a>
-            <a href="views.html">Наши пейзажи</a>
-            <a href="comments">О нас говорят</a>
-            <a href="rules.html">Закон джунглей</a>
-            <a href="location.html" class="active">Найти нас</a>
-            <a href="challengers" class="last">Пополни прайд</a>
+    <div class="body">
+      <div class="container">
+        <div class="contain">
+          <a href="#" class="logo"><img src="/assets/images/site/logo.png" alt="" /></a>
+          <span class="tel"><span class="code">+7 (343)</span> 213-69-69</span>
+          <div class="nav">
+            <ol id="nav">
+              <li id="nav1"><a href="index.html">О райском месте</a></li>
+              <li id="nav2"><a href="employees.html">Наши львицы</a></li>
+              <li id="nav3"><a href="services.html">Выбери удовольствие</a></li>
+              <li id="nav4"><a href="views.html">Наши пейзажи</a></li>
+              <li id="nav5"><a href="comments">О нас говорят</a></li>
+              <li id="nav6"><a href="rules.html">Закон джунглей</a></li>
+              <li id="nav7"><a href="location.html" class="active">Найти нас</a></li>
+              <li id="nav8"><a href="challengers">Пополни прайд</a></li>
+            </ol>
+          </div>
+
+          <div class="content">
+            <h1>Как нас найти</h1>
+            <br />
+            <div id="map"></div>
+            <script type="text/javascript">
+              ymaps.ready(init);
+              function init () {
+              var map = new ymaps.Map('map', {
+                center: [56.829, 60.592],
+                zoom: 16,
+                behaviors: ['default', 'scrollZoom']
+              });
+              map.controls.add('zoomControl')
+
+              polyline = new ymaps.Polyline([
+                [56.82979, 60.59073],
+                [56.82935, 60.590889],
+                [56.82947, 60.592],
+                [56.82934, 60.59204]
+              ], {
+              }, {
+                strokeWidth: 2,
+                strokeOpacity: 0.5,
+                strokeColor: "#FF0000"
+              });
+              arrow_triangle = new ymaps.Polygon([[
+                [56.82934, 60.59204],
+                [56.82938, 60.59196],
+                [56.829396, 60.59209],
+                [56.82934, 60.59204]
+              ]], {
+              }, {
+                fillColor: '#FF0000',
+                strokeColor: "#FF0000",
+                opacity: 0.5,
+                strokeWidth: 2
+              });
+
+              map.geoObjects
+               .add(polyline)
+               .add(arrow_triangle)
+              }
+            </script>
+            <div class="map_info">
+              <span class="bold">ул.Радищева 31, тел. 213-69-69</span>
+              <br />
+              <br />
+              Повернув с Радищева на улицу Сакко и Ванцетти, тут же поворачивайте налево. Поворачивайте перед УралТрансБанком. Пройдя еще двадцать метров вы увидите вывеску Afffrica.
+              <br />
+              <br />
+              Хорошего настроения и приятного Вам отдыха.
+              <br />
+              <br />
+              телефон: (343) 456-00-01<br />
+              e-mail: info@afffrica.ru
+            </div>
+            <div class="clr"></div>
           </div>
         </div>
-      </nav>
- 
-      <div class="main_content">
-        <h2 class="orange">Как нас найти</h2>
-        <div id="map"></div>
-        <script type="text/javascript">
-          ymaps.ready(init);
-          function init () {
-            var map = new ymaps.Map('map', {
-              center: [56.829, 60.592],
-              zoom: 16,
-              behaviors: ['default', 'scrollZoom']
-            });
-            map.controls.add('zoomControl')
-
-            placemark = new ymaps.Placemark([56.82934, 60.592]);
-            polyline = new ymaps.Polyline([
-              [56.82979, 60.59073],
-              [56.82935, 60.590889],
-              [56.82947, 60.592],
-              [56.82934, 60.59204]
-            ], {
-            }, {
-              strokeWidth: 5,
-              strokeOpacity: 0.5,
-              strokeColor: "#FF0000"
-            });
-
-           map.geoObjects
-             .add(polyline)
-          }
-        </script>
-
-        <div class="text">
-          <h3><strong>ул.Радищева 31, тел. 213-69-69</strong></h3>
-          <span>Повернув с Радищева на улицу Сакко и Ванцетти, тут же поворачивайте налево.<br /> Поворачивайте перед ТрансБанком. Пройдя еще двадцать метров вы увидите<br /> вывеску Afffrica.<br /><br /></span>
-          <span>Хорошего настроения и приятного вам отдыха.<br /><br /></span>
-          <span>телефон: (343) 456-00-01<br /></span>
-          <span>e-mail: info@afffrica.ru<br /></span>
-        </div>
       </div>
- 
-      <footer>
-      </footer>
     </div>
   </body>
 </html>

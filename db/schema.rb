@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718054037) do
+ActiveRecord::Schema.define(:version => 20120718053315) do
 
   create_table "challengers", :force => true do |t|
     t.string   "name"
     t.string   "text"
-    t.integer  "photo_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -25,12 +24,6 @@ ActiveRecord::Schema.define(:version => 20120718054037) do
     t.string   "name"
     t.string   "text"
     t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "photos", :force => true do |t|
-    t.string   "filename"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
