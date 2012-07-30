@@ -149,6 +149,13 @@ body{
  float:left;
 }
 
+.centcol {
+ position:relative;
+ top: -20px;
+ margin:0px 100px auto;
+ float:left;
+}
+
 h1{
  font-size:28px;
  color:#ff4400;
@@ -249,7 +256,6 @@ line-height:1.75;
  display:block;
  width:370px;
  height:28px;
- padding:2px 5px;
  background:#cb8811;
  border-radius:5px;
  border:none;
@@ -261,8 +267,11 @@ line-height:1.75;
  height:40px;
  position:relative;
  cursor:pointer;
- border:none;
  background:url(../images/site/send_btn.png);
+}
+
+.form input[type="submit"]:hover {
+  background:url(../images/site/send_btn_hover.png);
 }
 
 .form input#submit span{
@@ -384,6 +393,7 @@ line-height:1.75;
 .block_cat .links div {
  float:left;
  display:block;
+ margin:0px 15px 15px 15px;
 }
 
 .block_cat .links div a{
@@ -392,7 +402,6 @@ line-height:1.75;
  text-decoration:none;
  display:block;
  height:50px;
- padding:0px 15px 15px 15px;
  position:relative;
 }
 
@@ -413,15 +422,23 @@ line-height:1.75;
 }
 
 .block_cat .block{
- padding:10px;
  display:block;
  background:url(../images/site/bg1.png) top repeat-x;
  border-top:1px solid #cb0000;
 }
 
+.block .inner_block {
+  padding:10px;
+  margin:0 auto;
+}
+
 .block_cat .block img{
- border:5px solid #da3c02;
+ border:2px solid #da3c02;
  margin:0px 6px;
+}
+
+.block_cat .block img{
+  border:5px;
 }
 
 .block_cat .active{
@@ -481,7 +498,41 @@ div#map {
   border: 4px solid #DA3C02;
 }
 
-.center {
-  position:relative;
-  left:100px;
+.sub {
+  width:100%;
+  display:inline-block;
+  font-size:0;
+  line-height:0;
+}
+
+.over {
+  text-align:justify;
+  background:url(../images/site/bg1.png) top repeat-x;
+  line-height:0;
+}
+
+/*IE6*/* html .sub {
+  display:inline;
+}
+
+/*IE7*/* + html .sub {
+  display:inline;
+}
+
+.over img {
+  margin-top:1%;
+  margin-bottom:1%;
+  border:3px solid #da3c02;
+}
+
+.over img:hover {
+  border:5px solid #da3c02;
+}
+
+.over .first {
+  margin-left:2%;
+}
+
+.over .last {
+  margin-right:2%;
 }
