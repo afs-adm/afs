@@ -66,9 +66,22 @@
                 strokeWidth: 2
               });
 
+//              var map_zoom = map.getZoom();
+//              placemark_utb = new ymaps.Placemark([56.82905, 60.5913], {
+//                }, {
+//                iconImageHref:"/assets/images/site/utb.gif",
+//                iconImageSize:[40, 30]
+//              });
+
+//              map.events.add('boundschange', function (e) {
+  //              var new_zoom = e.get('newZoom');
+    //            placemark_utb.properties.set({iconImageSize: [20, 15]});
+      //        });
+
               map.geoObjects
                .add(polyline)
                .add(arrow_triangle)
+//               .add(placemark_utb)
               }
             </script>
             <div class="map_info">
