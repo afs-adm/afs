@@ -1,7 +1,7 @@
 #coding: utf-8
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @comments = Comment.active
   end
 
   def create
