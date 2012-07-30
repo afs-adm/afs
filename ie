@@ -1,0 +1,57 @@
+<!--[if lte IE 7]>
+  <style>
+    nav {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    li {
+      display: inline;
+      zoom:1;
+      overflow: hidden;
+    }
+    ol {
+      display: block;
+      position: relative;
+      height: 50px; 
+      overflow: hidden;
+      z-index: expression(runtimeStyle.zIndex = 1, function(node) { 
+        var list = node.childNodes, i = list.length, iWidth = node.offsetWidth/i;
+        while(i--) {
+          list[i].style.width = iWidth+'px';
+        }
+        node.style.width=node.offsetWidth+10+"px"; /* 10 - это значение побдираем по обстоятельствам */
+      }(this));)
+    }
+    a {
+      width: auto;
+      height: auto;
+      display: block;
+      z-index: expression(runtimeStyle.zIndex = 1, this == ((50/2)-parseInt(offsetHeight)/2) <0 ? (style.paddingTop="0",style.height="50px") : (style.paddingTop=(50/2)-(parseInt(offsetHeight)/2) +'px', style.height="50px"));
+    }
+  </style>
+
+  <script>
+    window.onresize = function() {
+      var nav = document.getElementById("nav");
+      nav.style.width = "100%";
+      var list = nav.childNodes, i = list.length, iWidth = nav.offsetWidth/i;
+      while(i--) {
+        list[i].style.width = iWidth+'px';
+      }
+      nav.style.width=nav.offsetWidth+10+"px";
+    }
+  </script>
+<![endif]-->
+
+<!--[if IE 6]>
+  <style>
+    li {
+      z-index: expression( runtimeStyle.zIndex = 1, this == parentNode.firstChild ? (className += " first-child") : 0)
+    }
+    .first-child {
+      padding-left: 0;
+    }
+  </style>
+<![endif]-->
