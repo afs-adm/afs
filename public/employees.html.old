@@ -33,7 +33,9 @@
             <div class="gallery_c">
               <div class="gallery">
                 <div id="gal_big">
-                  <a class="fancybox medium" id="visible" href="/assets/images/db/gallery/big/a1.jpg"><img src="/assets/images/db/gallery/medium/a1.jpg" width="287" height="223" alt="" /></a>
+                  <a class="fancybox visible" id="1" href="/assets/images/db/gallery/a1.jpg" rel="gallery"><img src="/assets/images/db/gallery/a1.jpg" width="287" height="223" alt="" /></a>
+                  <a class="fancybox hidden" id="2" href="/assets/images/db/gallery/a2.jpg" rel="gallery"><img src="/assets/images/db/gallery/a2.jpg" width="287" height="223" alt="" /></a>
+                  <a class="fancybox hidden" id="3" href="/assets/images/db/gallery/a3.jpg" rel="gallery"><img src="/assets/images/db/gallery/a3.jpg" width="287" height="223" alt="" /></a>
                 </div>
                 <script>
                   $(".fancybox")
@@ -42,13 +44,15 @@
                       padding : 0
                     });
                 </script>
-                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a1.jpg"><img src="/assets/images/db/gallery/small/a1.jpg" width="88" height="69" alt="" /></a>
-                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a2.jpg"><img src="/assets/images/db/gallery/small/a2.jpg" width="88" height="69" alt="" /></a>
-                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a3.jpg"><img src="/assets/images/db/gallery/small/a3.jpg" width="88" height="69" alt="" /></a>
+                <a class="small" id="1" href="#"><img src="/assets/images/db/gallery/a1.jpg" width="88" height="69"/></a>
+                <a class="small" id="2" href="#"><img src="/assets/images/db/gallery/a2.jpg" width="88" height="69"/></a>
+                <a class="small" id="3" href="#"><img src="/assets/images/db/gallery/a3.jpg" width="88" height="69"/></a>
               </div>
               <script>
                 $('.small').click(function(){
-                  $('#gal_big').html("<a class='fancybox medium' id='visible' href='/assets/images/db/gallery/big/a2.jpg'><img src='/assets/images/db/gallery/medium/a2.jpg' width='287' height='223'/></a>")
+                  var id = $(this).attr('id')
+                  $('#gal_big a').attr('class', 'fancybox hidden')
+                  $('#gal_big #' + id).attr('class', 'fancybox visible')
                 });
               </script>
               <div class="gallery_d">

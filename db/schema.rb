@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718053315) do
+ActiveRecord::Schema.define(:version => 20120731120805) do
 
   create_table "challengers", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,46 @@ ActiveRecord::Schema.define(:version => 20120718053315) do
     t.boolean  "active"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "employees", :force => true do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "patronymic"
+    t.string   "phone"
+    t.string   "shown_name"
+    t.integer  "bust"
+    t.integer  "waist"
+    t.integer  "hips"
+    t.string   "small_description"
+    t.string   "large_description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "path"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.boolean  "main",       :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "services", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "duration"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "views", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

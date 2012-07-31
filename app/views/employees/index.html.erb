@@ -1,0 +1,61 @@
+<div class="nav">
+  <ol id="nav">
+    <li id="nav1"><a href="index.html">О райском месте</a></li>
+    <li id="nav2"><a href="employees.html" class="active">Наши львицы</a></li>
+    <li id="nav3"><a href="services.html">Выбери удовольствие</a></li>
+    <li id="nav4"><a href="views.html">Наши пейзажи</a></li>
+    <li id="nav5"><a href="comments">О нас говорят</a></li>
+    <li id="nav6"><a href="rules.html">Закон джунглей</a></li>
+    <li id="nav7"><a href="location.html">Найти нас</a></li>
+    <li id="nav8"><a href="challengers">Пополни прайд</a></li>
+  </ol>
+</div>
+<div class="content">
+  <%= @employees.each_with_index do |employee, index| %>
+    <% class_value = (0 == index ? "gallery_c visible" : "gallery_c hidden") %>
+    <div class="<%= class_value %>">
+      <div class="gallery">
+        <div id="gal_big">
+          <% employee.photos.each_with_index do |photo, index| %>
+            <% class_gal_value = (true == photo.main ? "fancybox" + (index + 1) + "visible" : "fancybox" + (index + 1) + "hidden") %>
+            <%= link_to photo.path, (image_tag photo.path width="287" height="223"), :id => (index + 1), :class => class_gal_value %>
+          <% end %>
+        </div>
+        <script>
+          $(".fancybox")
+            .attr('rel', 'gallery')
+            .fancybox({
+              padding : 0
+            });
+        </script>
+        <% employee.photos.each_with_index do |photo, index| %>
+          <%= link_to "#", (image_tag photo.path, :width => "88", :height => "69"), :class => "small", :id => (index + 1) %>
+        <% end %>
+      </div>
+    </div>
+    <script>
+      $('.small').click(function(){
+        var id = $(this).attr('id')
+        $('#gal_big a').attr('class', 'fancybox hidden')
+        $('#gal_big #' + id).attr('class', 'fancybox visible')
+      });
+    </script>
+    <div class="gallery_d">
+      <div>
+        <span class="shown_name"><%= employee.shown_name %></span>
+        <span class="small_description"><%= employee.small_description %></span>
+        <span class="params"><span>Параметры:</span><%= employee.bust %> / <%= employee.waist %> / <%= employee.hips %></span>
+        <%= link_to large_description "Узнай обо мне больше..." %>
+      </div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="more_girls">
+    <h1>Наши львицы</h1>
+    <div>
+      <% @employees.each do |employee|%>
+        <%= link_to "#", image_tag employee.photos.main.path %>
+      <% end %>
+    </div>
+  </div>
+</div>
