@@ -4,9 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Документ без названия</title>
 
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/jquery.fancybox.css" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css" />
 
     <script type="text/javascript" src="assets/javascripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="assets/javascripts/jquery.fancybox.js"></script>
     <script type="text/javascript" src="assets/javascripts/main.js"></script>
   </head>
   <body>
@@ -31,12 +33,24 @@
             <div class="gallery_c">
               <div class="gallery">
                 <div id="gal_big">
-                  <img src="/assets/images/db/gal/b1.jpg" alt="" />
+                  <a class="fancybox medium" id="visible" href="/assets/images/db/gallery/big/a1.jpg"><img src="/assets/images/db/gallery/medium/a1.jpg" width="287" height="223" alt="" /></a>
                 </div>
-                <a href="javascript:void(0);" rel="/assets/images/db/gal/b1.jpg"><img src="/assets/images/db/gal/s3.jpg" alt="" /></a>
-                <a href="javascript:void(0);" rel="/assets/images/db/gal/b2.jpg" class="margin"><img src="/assets/images/db/gal/s2.jpg" alt="" /></a>
-                <a href="javascript:void(0);" rel="/assets/images/db/gal/b3.jpg"><img src="/assets/images/db/gal/s1.jpg" alt="" /></a>
+                <script>
+                  $(".fancybox")
+                    .attr('rel', 'gallery')
+                    .fancybox({
+                      padding : 0
+                    });
+                </script>
+                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a1.jpg"><img src="/assets/images/db/gallery/small/a1.jpg" width="88" height="69" alt="" /></a>
+                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a2.jpg"><img src="/assets/images/db/gallery/small/a2.jpg" width="88" height="69" alt="" /></a>
+                <a class="small" href="#" rel="/assets/images/db/gallery/medium/a3.jpg"><img src="/assets/images/db/gallery/small/a3.jpg" width="88" height="69" alt="" /></a>
               </div>
+              <script>
+                $('.small').click(function(){
+                  $('#gal_big').html("<a class='fancybox medium' id='visible' href='/assets/images/db/gallery/big/a2.jpg'><img src='/assets/images/db/gallery/medium/a2.jpg' width='287' height='223'/></a>")
+                });
+              </script>
               <div class="gallery_d">
                 <div>
                   <span class="name">Анна</span>

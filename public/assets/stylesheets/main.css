@@ -185,7 +185,7 @@ line-height:1.75;
  float:right;
  width:370px;
  position:relative;
- top:90px;
+ top:60px;
 }
 
 .main_girl img {
@@ -484,11 +484,7 @@ line-height:1.75;
 
 .text ul{
  list-style:decimal;
- margin-left:20px;
-}
-
-.text ul li{
- margin-bottom:15px;
+ padding-left:50px;
 }
 
 div#map {
@@ -535,4 +531,8 @@ div#map {
 
 .over .last {
   margin-right:2%;
+}
+
+.hidden {
+  display:none;
 }
