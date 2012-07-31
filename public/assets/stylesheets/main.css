@@ -338,7 +338,7 @@ line-height:1.75;
 
 .more_girls{
  display:block;
- background:url(../images/db/c_sep.png) top center no-repeat;
+ background:url(../images/site/c_sep.png) top center no-repeat;
  width:100%;
  position:relative;
  padding-top:20px;
@@ -405,12 +405,12 @@ line-height:1.75;
  position:relative;
 }
 
-.cl a{background-image:url(../images/db/classic.png); color:#00c405;}
-.po a{background-image:url(../images/db/popular.png); color:#ff4400;}
-.ex a{background-image:url(../images/db/exclusive.png); color:#e90000;}
-.wo a{background-image:url(../images/db/for_women.png); color:#0054ff;}
-.pa a{background-image:url(../images/db/couple.png); color:#cc00ff;}
-.he a{background-image:url(../images/db/health.png); color:#00ccff;}
+.cl a{background-image:url(../images/site/classic.png); color:#00c405;}
+.po a{background-image:url(../images/site/popular.png); color:#ff4400;}
+.ex a{background-image:url(../images/site/exclusive.png); color:#e90000;}
+.wo a{background-image:url(../images/site/for_women.png); color:#0054ff;}
+.pa a{background-image:url(../images/site/couple.png); color:#cc00ff;}
+.he a{background-image:url(../images/site/health.png); color:#00ccff;}
 
 .block_cat .links a{
  text-decoration:none;
