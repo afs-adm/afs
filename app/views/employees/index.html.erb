@@ -1,7 +1,7 @@
 <div class="nav">
   <ol id="nav">
     <li id="nav1"><a href="index.html">О райском месте</a></li>
-    <li id="nav2"><a href="employees.html" class="active">Наши львицы</a></li>
+    <li id="nav2"><a href="employees" class="active">Наши львицы</a></li>
     <li id="nav3"><a href="services.html">Выбери удовольствие</a></li>
     <li id="nav4"><a href="views.html">Наши пейзажи</a></li>
     <li id="nav5"><a href="comments">О нас говорят</a></li>
@@ -13,31 +13,33 @@
 <div class="content">
   <%= @employees.each_with_index do |employee, index| %>
     <% class_value = (0 == index ? "gallery_c visible" : "gallery_c hidden") %>
+    <% count = index + 1 %>
     <div class="<%= class_value %>">
       <div class="gallery">
         <div id="gal_big">
           <% employee.photos.each_with_index do |photo, index| %>
-            <% class_gal_value = (true == photo.main ? "fancybox" + (index + 1) + "visible" : "fancybox" + (index + 1) + "hidden") %>
-            <%= link_to photo.path, (image_tag photo.path width="287" height="223"), :id => (index + 1), :class => class_gal_value %>
+            <% class_gal_value = (true == photo.main ? "fancybox_#{count} visible" : "fancybox_#{count} hidden") %>
+            <%= link_to image_tag(photo.path, :width => "287", :height => "223", :rel => "gallery"), photo.path,  :id => count, :class => class_gal_value %>
           <% end %>
         </div>
         <script>
-          $(".fancybox")
+          $(".fancybox_<%= count %>")
             .attr('rel', 'gallery')
             .fancybox({
               padding : 0
             });
         </script>
         <% employee.photos.each_with_index do |photo, index| %>
-          <%= link_to "#", (image_tag photo.path, :width => "88", :height => "69"), :class => "small", :id => (index + 1) %>
+          <% count = index + 1 %>
+          <%= link_to image_tag(photo.path, :width => "88", :height => "69"), "#", :class => "small", :id => count %>
         <% end %>
       </div>
     </div>
     <script>
       $('.small').click(function(){
         var id = $(this).attr('id')
-        $('#gal_big a').attr('class', 'fancybox hidden')
-        $('#gal_big #' + id).attr('class', 'fancybox visible')
+        $('#gal_big a').attr('class', 'fancybox_<%= count %> hidden')
+        $('#gal_big #' + id).attr('class', 'fancybox_<%= count %> visible')
       });
     </script>
     <div class="gallery_d">
@@ -45,16 +47,16 @@
         <span class="shown_name"><%= employee.shown_name %></span>
         <span class="small_description"><%= employee.small_description %></span>
         <span class="params"><span>Параметры:</span><%= employee.bust %> / <%= employee.waist %> / <%= employee.hips %></span>
-        <%= link_to large_description "Узнай обо мне больше..." %>
+        <%#= link_to large_description "Узнай обо мне больше..." %>
       </div>
     </div>
-    <div class="clr"></div>
-  </div>
+  <% end %>
+  <div class="clr"></div>
   <div class="more_girls">
     <h1>Наши львицы</h1>
     <div>
       <% @employees.each do |employee|%>
-        <%= link_to "#", image_tag employee.photos.main.path %>
+        <%= link_to image_tag(employee.photos.main.first.path), "#" %>
       <% end %>
     </div>
   </div>
