@@ -319,6 +319,9 @@ line-height:1.75;
  width:297px;
  text-align:center;
  display:block;
+}
+
+#gal_big a{
  margin-bottom:15px;
 }
 
@@ -483,7 +486,6 @@ line-height:1.75;
 }
 
 .text ul{
- list-style:decimal;
  padding-left:50px;
 }
 
