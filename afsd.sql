@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `shown_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'classic','Классические','2012-08-03 11:32:29','2012-08-03 11:32:29'),(2,'popular','Популярные','2012-08-03 11:32:29','2012-08-03 11:32:29'),(3,'exclusive','Exclusive','2012-08-03 11:32:29','2012-08-03 11:32:29'),(4,'women','Для женщин','2012-08-03 11:32:29','2012-08-03 11:32:29'),(5,'pairs','Для пар','2012-08-03 11:32:29','2012-08-03 11:32:29'),(6,'health','Оздоровительные','2012-08-03 11:32:30','2012-08-03 11:32:30');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `challengers`
 --
 
@@ -104,6 +131,32 @@ INSERT INTO `employees` VALUES (1,'Анна',NULL,NULL,NULL,'Анна',94,60,92,
 UNLOCK TABLES;
 
 --
+-- Table structure for table `parts`
+--
+
+DROP TABLE IF EXISTS `parts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `parts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `service_id` int(11) DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `parts`
+--
+
+LOCK TABLES `parts` WRITE;
+/*!40000 ALTER TABLE `parts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `parts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `photos`
 --
 
@@ -119,7 +172,7 @@ CREATE TABLE `photos` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +181,7 @@ CREATE TABLE `photos` (
 
 LOCK TABLES `photos` WRITE;
 /*!40000 ALTER TABLE `photos` DISABLE KEYS */;
-INSERT INTO `photos` VALUES (1,'image/employees/a1.jpg',1,'employee',1,'2012-07-31 12:52:26','2012-07-31 12:52:26'),(2,'image/employees/a2.jpg',1,'employee',0,'2012-07-31 12:52:45','2012-07-31 12:52:45'),(3,'image/employees/a3.jpg',1,'employee',0,'2012-07-31 12:53:32','2012-07-31 12:53:32'),(4,'image/employees/b.jpg',2,'employee',1,'2012-07-31 12:54:07','2012-07-31 12:54:07'),(5,'image/employees/b1.jpg',2,'employee',0,'2012-07-31 12:54:33','2012-07-31 12:54:33');
+INSERT INTO `photos` VALUES (1,'/images/employees/a1.jpg',1,'employee',1,'2012-07-31 12:52:26','2012-08-01 11:56:57'),(2,'/images/employees/a2.jpg',1,'employee',0,'2012-07-31 12:52:45','2012-08-01 12:02:21'),(3,'/images/employees/a3.jpg',1,'employee',0,'2012-07-31 12:53:32','2012-08-01 12:02:33'),(4,'/images/employees/b.jpg',2,'employee',1,'2012-07-31 12:54:07','2012-08-01 12:02:45'),(5,'/images/employees/b1.jpg',2,'employee',0,'2012-07-31 12:54:33','2012-08-01 12:02:56'),(6,'/images/services/tai-massage.jpg',1,'service',1,'2012-08-03 11:41:04','2012-08-03 11:48:19');
 /*!40000 ALTER TABLE `photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +204,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20120718052958'),('20120718053315'),('20120731103656'),('20120731115125'),('20120731120711'),('20120731120805');
+INSERT INTO `schema_migrations` VALUES ('20120718052958'),('20120718053315'),('20120731103656'),('20120731115125'),('20120731120711'),('20120731120805'),('20120803104331'),('20120803104446');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,10 +221,11 @@ CREATE TABLE `services` (
   `price` int(11) DEFAULT NULL,
   `duration` int(11) DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,6 +234,7 @@ CREATE TABLE `services` (
 
 LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
+INSERT INTO `services` VALUES (1,'Тайский массаж',2200,60,'Это ультрачувствительный, очень легкий массаж всего тела с использованием талька. Он выполняется кончиками пальцев массажистки и перьями таким образом,     что каждой частичкой Вашего тела овладевает сладкая истома. Вы почувствуете, как с каждым прикоснов',3,'2012-08-03 11:33:00','2012-08-03 11:33:00');
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +273,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-07-31 18:59:55
+-- Dump completed on 2012-08-03 18:21:40

@@ -1,2 +1,70 @@
-<h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
+<div class="body">
+  <div class="container">
+    <div class="contain">
+      <a href="#" class="logo"><img src="/assets/images/site/logo.png" alt="" /></a>
+      <span class="tel"><span class="code">+7 (343)</span> 213-69-69</span>
+      <div class="nav">
+        <ol id="nav">
+          <li id="nav1"><a href="index.html">О райском месте</a></li>
+          <li id="nav2"><a href="employees">Наши львицы</a></li>
+          <li id="nav3"><a href="services" class="active">Выбери удовольствие</a></li>
+          <li id="nav4"><a href="views.html">Наши пейзажи</a></li>
+          <li id="nav5"><a href="comments">О нас говорят</a></li>
+          <li id="nav6"><a href="rules.html">Закон джунглей</a></li>
+          <li id="nav7"><a href="location.html">Найти нас</a></li>
+          <li id="nav8"><a href="challengers">Пополни прайд</a></li>
+        </ol>
+      </div>
+      <div class="content">
+        <h1>Наши программы</h1>
+        <% @services.each do |service| %>
+          <div class="service_picture"><img src="<%= service.photo.path %>" width="170" height="170"/></div>
+          <div class="service_description">
+            <h1><%= service.name %></h1>
+            Длительность <span class="big"><%= service.duration %> минут</span><br />
+            Стоимость <span class="big"><%= service.price %> руб.</span><br />
+            <br />
+            <%= service.description %>
+            <br />
+            <br />
+            В программу входит:<br />
+            <ul>
+              <% service.parts.each do |part| %>
+                <li>part.description</li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="clr"></div>
+        <div class="block_cat">
+          <div class="links">
+            <% Category.all.each do |category| %>
+              <div class="<%= category.name %>">
+                <%= link_to "#{category.shown_name}", "#" %>
+              </div>
+            <% end %>
+          <div class="clr"></div>
+
+          <div class="over">
+            <% Category.all.each do |category| %>
+              <% size = Service.where(:category_id => category.id).size %>
+              <% Service.where(:category_id => category.id).each_with_index do |service, index| %>
+                <% if 0 == index %>
+                  <% first_last_class = "first" %>
+                <% elsif size - 1 == index %>
+                  <% first_last_class = "last" %>
+                <% end %>
+                <% unless first_last_class.nil? %>
+                  <%= link_to image_tag(service.photo.path, :width => "169", :height => "131"), "#", :class => first_last_class %>
+                <% else %>
+                  <%= link_to image_tag(service.photo.path, :width => "169", :height => "131"), "#" %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <div class="sub"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

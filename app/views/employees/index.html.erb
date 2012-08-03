@@ -16,43 +16,48 @@
         </ol>
       </div>
       <div class="content">
-        <%= @employees.each_with_index do |employee, index| %>
-          <% class_value = (0 == index ? "gallery_c visible" : "gallery_c hidden") %>
+        <% @employees.each_with_index do |employee, index| %>
           <% count = index + 1 %>
-          <div class="<%= class_value %>">
-            <div class="gallery gallery_<%= count %>">
-              <div id="gal_big">
-                <% employee.photos.each_with_index do |photo, index1| %>
-                  <% count1 = index1 + 1 %>
-                  <% class_gal_value = (true == photo.main ? "fancybox_#{count} visible" : "fancybox_#{count} hidden") %>
-                  <%= link_to image_tag(photo.path, :width => "287", :height => "223", :rel => "gallery"), photo.path,  :id => count1, :class => class_gal_value %>
-                <% end %>
-              </div>
-              <script>
-                $(".fancybox_<%= count %>")
-                  .attr('rel', 'gallery')
-                  .fancybox({
-                    padding : 0
+          <% class_value = (0 == index ? "employee visible" : "employee hidden") %>
+          <div class="<%= class_value %>" id="employee_<%= count %>">
+            <div class="gallery_full">
+              <div class="gallery">
+                <div class="medium_photo">
+                  <% employee.photos.each_with_index do |photo, index1| %>
+                    <% count1 = index1 + 1 %>
+                    <% class_gal_value = (true == photo.main ? "num_#{count1} employee_#{count} visible" : "num_#{count1} employee_#{count} hidden") %>
+                    <%= link_to image_tag(photo.path, :width => "287", :height => "223", :rel => "gallery"), photo.path, :class => class_gal_value %>
+                  <% end %>
+                </div>
+                <script>
+                  $(".medium_photo .employee_<%= count %>")
+                    .attr('rel', 'gallery')
+                    .fancybox({
+                      padding : 0
+                    });
+                </script>
+                <div class="small_photo">
+                  <% employee.photos.each_with_index do |photo, index2| %>
+                    <% count2 = index2 + 1 %>
+                    <% class_margin = 1 == index2%3 ? "num_#{count2} margin" : "num_#{count2}" %>
+                    <%= link_to image_tag(photo.path, :width => "88", :height => "69"), "#", :class => class_margin %>
+                  <% end %>
+                </div>
+                <script type="text/javascript">
+                  $('#employee_<%= count %> .small_photo a').click(function(){
+                    var num_class = $(this).attr('class').match(/num_\d+/);
+                    $("#employee_<%= count %> .medium_photo a").removeClass('visible').addClass('hidden')
+                    $("#employee_<%= count %> .medium_photo ." + num_class).removeClass('hidden').addClass('visible')
                   });
-              </script>
-              <% employee.photos.each_with_index do |photo, index2| %>
-                <% count2 = index2 + 1 %>
-                <%= link_to image_tag(photo.path, :width => "88", :height => "69"), "#", :class => "small", :id => count2 %>
-              <% end %>
+                </script>
+              </div>
             </div>
-          </div>
-          <script type="text/javascript">
-            $('.gallery_<%= count %> .small').click(function(){
-              var id = $(this).attr('id');
-              $(".gallery_<%= count %> #gal_big a").attr('class', 'fancybox_<%= count %> hidden')
-              $(".gallery_<%= count %> #gal_big #" + id).attr('class', 'fancybox_<%= count %> visible')
-            });
-          </script>
-          <div class="gallery_d">
-            <div>
-              <span class="shown_name"><%= employee.shown_name %></span>
-              <span class="small_description"><%= employee.small_description %></span>
-              <span class="params"><span>Параметры:</span><%= employee.bust %> / <%= employee.waist %> / <%= employee.hips %></span>
+            <div class="gallery_description">
+              <div>
+                <span class="shown_name"><%= employee.shown_name %></span>
+                <span class="small_description"><%= employee.small_description %></span>
+                <span class="params"><span>Параметры:</span><%= employee.bust %> / <%= employee.waist %> / <%= employee.hips %></span>
+              </div>
             </div>
           </div>
         <% end %>
@@ -60,11 +65,19 @@
         <div class="more_girls">
           <h1>Наши львицы</h1>
           <div>
-            <% @employees.each do |employee|%>
-              <%= link_to image_tag(employee.photos.main.first.path, :width => "106", :height => "82"), "#" %>
+            <% @employees.each_with_index do |employee, index3| %>
+              <% count3 = index3 + 1 %>
+              <%= link_to image_tag(employee.photos.main.first.path, :width => "106", :height => "82"), "#", :class => "employee_#{count3}" %>
             <% end %>
           </div>
         </div>
+        <script type="text/javascript">
+          $('.more_girls div a').click(function(){
+            var employee_class = $(this).attr('class');
+            $(".employee").removeClass('visible').addClass('hidden')
+            $("#" + employee_class).removeClass('hidden').addClass('visible')
+          });
+        </script>
       </div>
     </div>
   </div>

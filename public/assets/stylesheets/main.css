@@ -200,30 +200,30 @@ line-height:1.75;
 }
 
 
-.main_girl div .name, .gallery_d .name{
+.main_girl div .name, .gallery_description .shown_name{
  font-size:24px;
  display:block;
 }
 
-.main_girl .desc, .gallery_d .desc{
+.main_girl .desc, .gallery_description .small_description{
  font-size:12px;
  display:block;
 }
 
-.main_girl .params, .gallery_d .params{
+.main_girl .params, .gallery_description .params{
  display:block;
  font-size:16px;
 }
 
-.main_girl .params span, .gallery_d .params span{
+.main_girl .params span, .gallery_description .params span{
  color:#fff;
  font-size:14px;
  display:block;
 }
 
-.main_girl a, .gallery_d a{color:#ff4400; text-decoration:underline;}
+.main_girl a, .gallery_description a{color:#ff4400; text-decoration:underline;}
 
-.main_girl a:hover, .gallery_d a:hover{
+.main_girl a:hover, .gallery_description a:hover{
  text-decoration:none;
 }
 
@@ -295,7 +295,7 @@ line-height:1.75;
  float:right;
 }
 
-.gallery_c{
+.gallery_full{
  display:block;
  margin-bottom:35px;
 }
@@ -305,7 +305,7 @@ line-height:1.75;
  float:left;
 }
 
-.gallery_d{
+.gallery_description{
  float:left;
  margin-left:40px;
  color:#ff4400;
@@ -315,17 +315,17 @@ line-height:1.75;
  display:block;
 }
 
-#gal_big{
+.medium_photo{
  width:297px;
  text-align:center;
  display:block;
 }
 
-#gal_big a{
+.medium_photo a{
  margin-bottom:15px;
 }
 
-#gal_big img{
+.medium_photo img{
  border:5px solid #da3c02;
 }
 
@@ -337,7 +337,6 @@ line-height:1.75;
 .gallery a.margin{
  margin:0px 10px;
 }
-
 
 .more_girls{
  display:block;
@@ -367,17 +366,17 @@ line-height:1.75;
  border:4px solid #da3c02;
 }
 
-.program_pic{
+.service_picture{
  float:left;
  width:180px;
  margin-right:20px;
 }
 
-.program_pic img{
+.service_picture img{
  border:5px solid #da3c02;
 }
 
-.program_d{
+.service_description{
  float:left;
  width:570px;
 }
@@ -408,12 +407,12 @@ line-height:1.75;
  position:relative;
 }
 
-.cl a{background-image:url(../images/site/classic.png); color:#00c405;}
-.po a{background-image:url(../images/site/popular.png); color:#ff4400;}
-.ex a{background-image:url(../images/site/exclusive.png); color:#e90000;}
-.wo a{background-image:url(../images/site/for_women.png); color:#0054ff;}
-.pa a{background-image:url(../images/site/couple.png); color:#cc00ff;}
-.he a{background-image:url(../images/site/health.png); color:#00ccff;}
+.classic a{background-image:url(../images/site/classic.png); color:#00c405;}
+.popular a{background-image:url(../images/site/popular.png); color:#ff4400;}
+.exclusive a{background-image:url(../images/site/exclusive.png); color:#e90000;}
+.women a{background-image:url(../images/site/for_women.png); color:#0054ff;}
+.pairs a{background-image:url(../images/site/couple.png); color:#cc00ff;}
+.health a{background-image:url(../images/site/health.png); color:#00ccff;}
 
 .block_cat .links a{
  text-decoration:none;
